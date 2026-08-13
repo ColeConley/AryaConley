@@ -6,14 +6,14 @@
 
 // ---- Header text -------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
-  setText('hero-eyebrow',   'in loving memory of');
-  setText('hero-name',      'Arya');
-  setText('hero-dates',     '2017 – 2026');
-  setText('hero-epitaph',   'You made our family complete. I hope you are getting all the greenies you want in heaven. We love you forever sweet girl.');
+  setText('hero-eyebrow', 'in loving memory of');
+  setText('hero-name', 'Arya');
+  setText('hero-dates', '2017 – 2026');
+  setText('hero-epitaph', 'You made our family complete. I hope you are getting all the greenies you want in heaven. We love you forever sweet girl.');
 
-  setText('message-text',   'These are the years, the afternoons, and the small ordinary moments — collected here so they’re never far from reach.');
+  setText('message-text', 'These are the years, the afternoons, and the small ordinary moments — collected here so they’re never far from reach.');
 
-  setText('closing-line',      'Until we’re together again.');
+  setText('closing-line', 'Until we’re together again.');
   setText('closing-signature', 'With all my love.');
 });
 
@@ -23,13 +23,38 @@ function setText(id, text) {
 }
 
 /* ============================================================
-   PHOTOS
+   PHOTOS — AUTOMATIC MODE (recommended)
    ------------------------------------------------------------
-   1. Put your image files in the /images folder.
-   2. Add one line per photo below with the filename.
-   3. "caption" is optional — delete the line or leave it as ''
-      if you don't want text under a particular photo.
-   4. Photos appear in the order you list them here.
+   Fill in your GitHub username and repo name below, then just
+   drop photos into the /images folder and push. The page will
+   find them on its own — nothing else to edit, ever.
+
+   Order: photos are sorted by filename, so name them like
+   01-luna.jpg, 02-luna.jpg, 03-luna.jpg to control the order.
+   Anything without a leading number just sorts alphabetically.
+   ============================================================ */
+
+const REPO = {
+  owner: 'ColeConley',   // <-- your GitHub username
+  name: 'AryaConley', // <-- the repository this site lives in
+  branch: 'main',           // <-- change if your default branch is different
+  path: 'images',
+};
+
+/* Optional: give specific photos a caption by filename.
+   Any photo not listed here just appears without one. */
+const CAPTIONS = {
+  // 'luna-01.jpg': 'Her favorite windowsill, 2015',
+  // 'luna-03.jpg': 'The day we brought her home',
+};
+
+/* ============================================================
+   PHOTOS — MANUAL MODE (optional)
+   ------------------------------------------------------------
+   If you'd rather hand-pick exactly which photos appear and in
+   what order instead of using the folder above, list them here.
+   As soon as this list has anything in it, it's used instead of
+   automatic mode.
    ============================================================ */
 
 const PHOTOS = [

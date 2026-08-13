@@ -2,26 +2,53 @@
 
 A single-page, scrollable photo memorial. Everything you'd want to change lives in **`content.js`**.
 
-## Adding photos
+## Adding photos (automatic — recommended)
 
-1. Drop your image files into the `images` folder (jpg, png, or webp all work — jpg/webp will load fastest).
-2. Open `content.js` and add one line per photo to the `PHOTOS` list near the bottom:
+Once this is set up, adding photos is just: drop the file in `images`, push to GitHub, done. No editing required.
+
+1. Open `content.js` and fill in the `REPO` section near the top with your GitHub username and this repository's name:
 
    ```js
-   const PHOTOS = [
-     { src: 'images/luna-01.jpg', caption: 'Her favorite windowsill, 2015' },
-     { src: 'images/luna-02.jpg', caption: '' },
-     { src: 'images/luna-03.jpg', caption: 'The day we brought her home' },
-   ];
+   const REPO = {
+     owner:  'yourusername',
+     name:   'your-repo-name',
+     branch: 'main',
+     path:   'images',
+   };
    ```
 
-   - `caption` is optional. Leave it as `''` if you don't want text under a photo.
-   - Photos appear in the order you list them.
-   - You can add as many as you like — the gallery lays itself out automatically.
+2. Drop your image files into the `images` folder (jpg, png, webp, or gif — jpg/webp load fastest).
+3. Push to GitHub. The site fetches the current contents of the `images` folder each time it loads, so any photo that's in there just appears — nothing else to touch.
 
-3. Save, refresh the page, and they'll appear.
+**Order:** photos are sorted by filename, so name them like `01-luna.jpg`, `02-luna.jpg`, `03-luna.jpg` if you care about the order. Otherwise they just sort alphabetically.
+
+**Captions (optional):** if you want a caption under a specific photo, add it to the `CAPTIONS` object in `content.js`:
+
+   ```js
+   const CAPTIONS = {
+     'luna-01.jpg': 'Her favorite windowsill, 2015',
+     'luna-03.jpg': 'The day we brought her home',
+   };
+   ```
+
+   Any photo not listed there just appears without a caption.
+
+This works because the repo is public (which it needs to be for GitHub Pages on a free plan anyway) — the page asks GitHub's public API what's in the folder, no login required. It's plenty for a personal site; if you ever got unusually high traffic, GitHub's API has a light rate limit for this, though for a memorial site that's very unlikely to matter.
 
 **Tip:** if your photos are very large (many phones shoot 4000px+ images), the page will load faster if you resize them to around 1600px on the longest side first. Any free tool (Preview on Mac, Photos on Windows, or a site like squoosh.app) can do this in bulk.
+
+## Adding photos (manual — optional)
+
+If you'd rather hand-pick exactly which photos show and in what order instead of relying on the folder, list them in the `PHOTOS` array in `content.js`:
+
+```js
+const PHOTOS = [
+  { src: 'images/luna-01.jpg', caption: 'Her favorite windowsill, 2015' },
+  { src: 'images/luna-02.jpg', caption: '' },
+];
+```
+
+As soon as `PHOTOS` has anything in it, it's used instead of the automatic folder-based mode.
 
 ## Editing the text
 
