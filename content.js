@@ -7,9 +7,9 @@
 // ---- Header text -------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
   setText('hero-eyebrow',   'in loving memory of');
-  setText('hero-name',      'Luna');
-  setText('hero-dates',     '2012 – 2026');
-  setText('hero-epitaph',   'The best patch of sunlight in the house was always wherever she happened to be sitting.');
+  setText('hero-name',      'Arya');
+  setText('hero-dates',     '2017 – 2026');
+  setText('hero-epitaph',   'You made our family complete. I hope you are getting all the greenies you want in heave. We love you forever sweet girl.');
 
   setText('message-text',   'These are the years, the afternoons, and the small ordinary moments — collected here so they’re never far from reach.');
 
