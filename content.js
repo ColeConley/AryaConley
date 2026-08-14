@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setText('hero-eyebrow', 'in loving memory of');
   setText('hero-name', 'Arya');
   setText('hero-dates', '2017 – 2026');
-  setText('hero-epitaph', 'You made our family complete. I hope you are getting all the greenies you want in heaven. We love you forever sweet girl.');
+  setText('hero-epitaph', 'Our Sweet Girl. Our Girly. Our Baby. Our Blue Girl.');
 
-  setText('message-text', 'These are the years, the afternoons, and the small ordinary moments — collected here so they’re never far from reach.');
+  setText('message-text', 'You made our family complete. I hope you are getting all the greenies you want in heaven. We love you forever sweet girl.');
 
   setText('closing-line', 'Until we’re together again.');
   setText('closing-signature', 'With all my love.');
